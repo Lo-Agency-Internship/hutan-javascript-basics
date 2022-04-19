@@ -1,5 +1,7 @@
 "use strict";
 
+alert('Hello World \n\n Fill The Box and Submit')
+
 const name=prompt("Type Your Name");
 const age=prompt("Type Your Age");
 const sex=prompt("Type Your Sex");
