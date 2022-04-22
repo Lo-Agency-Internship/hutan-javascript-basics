@@ -1,20 +1,9 @@
 "use strict";
 
-alert('Hello World \n\n Fill The Box and Submit')
+const yourname = prompt("Enter Your Name:");
+const lastname = prompt("Enter Your Lastname:");
+const age = prompt("Enter Your Age:");
+const gender = prompt("Enter Your Gender:");
 
-
-
-const name=prompt("Type Your Name");
-const age=prompt("Type Your Age");
-const sex=prompt("Type Your Sex");
-
-alert(name + ' , ' + age + ' , '+ sex);
-
-const num1=prompt("Type Number1");
-const num2=prompt("Type Number2");
-alert(num1 + ' , ' + num2 );
-alert(num2 + ' , '+ num1);
-
-let result=prompt("Type Somthing");
-alert(result);
-
+alert("Your Name is:"+" "+ yourname+"\n"+"Your Last Name is:"+" "+ lastname+"\n"+
+"Your Age is:"+" "+age+"\n"+"Your Gendee is:"+" "+gender);
