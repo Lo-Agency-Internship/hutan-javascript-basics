@@ -18,3 +18,18 @@ function ComparingEqual(number1,number2)
 
 ComparingEqual(3,3);
 
+//  Answer to Question 2
+function CompairingAbsoluteNumber(number)
+{
+    let _result;
+    if(number > 19)
+    {
+        _result= number-19;
+        _result=_result*3;
+        console.log(_result);
+    }
+    else{
+        console.log("Less than 19");
+    }
+}
+CompairingAbsoluteNumber(112);
