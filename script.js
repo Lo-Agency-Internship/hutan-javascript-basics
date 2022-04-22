@@ -1,9 +1,21 @@
 "use strict";
 
-const yourname = prompt("Enter Your Name:");
-const lastname = prompt("Enter Your Lastname:");
-const age = prompt("Enter Your Age:");
-const gender = prompt("Enter Your Gender:");
 
-alert("Your Name is:"+" "+ yourname+"\n"+"Your Last Name is:"+" "+ lastname+"\n"+
-"Your Age is:"+" "+age+"\n"+"Your Gendee is:"+" "+gender);
+// Answer to Question 1
+function rand(r1,r2)
+{
+ r1=1;
+ r2=20;
+       return Math.floor(Math.random()*(r1+r2));
+}
+
+console.log(rand(3,4)*10)
+
+//Answer to Question2
+function  bin2dec(something)
+{
+    return Math.random();
+}
+
+console.log(bin2dec("Print Decimal Number"));
+
