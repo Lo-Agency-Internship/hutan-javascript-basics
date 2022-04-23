@@ -33,3 +33,21 @@ function CompairingAbsoluteNumber(number)
     }
 }
 CompairingAbsoluteNumber(112);
+
+
+
+//  Answer to Question 3
+function StartWithSpeceficLetters(input)
+{
+    let startWithLetter="Lo"
+    if(input.startsWith(startWithLetter))
+    {
+        console.log(input);
+    }
+    else{
+        input=startWithLetter+input;
+        console.log(input);
+    }
+}
+
+StartWithSpeceficLetters("asdAgency");
