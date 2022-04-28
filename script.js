@@ -1,53 +1,236 @@
 "use strict";
 
-
-// Answer to Question 1
-function ComparingEqual(number1,number2)
+function logicalGateBuffer (result=false)
 {
-    let result;
-    if(number1 === number2)
-    {
-        result =number1+number2;
-        result = result*3;
-        console.log(result);
+    let input = Math.floor(Math.random()*2);
+    console.log("Buffer " +" =  " + input);
+    switch (input){
+        case 1:
+            result = !!true;
+            console.log("Buffer is "+result);
+            return !!result;
+            break;
+            case 0:
+                result=!!false;
+                console.log("Buffer is "+ result);
+                return !result;
+            
+                break;
     }
-    else{
-        console.log("Not Equal");
+    
+}
+
+
+function logicalGateNot (result=false)
+{
+    let input = Math.floor(Math.random()*2);
+    console.log("NOT " + " = " +input);
+    switch (input){
+        case 1:
+            result = !true;
+            console.log("NOT is " +result);
+            return !result;
+            break;
+            case 0:
+                result=!false;
+                console.log("NOT is " +result);
+                return !!result;
+                break;
+    }
+    
+}
+
+function logicalGateAnd(a=false,b=false)
+{
+    let _a = Math.floor(Math.random()*2);
+    let _b=Math.floor(Math.random()*2);
+
+    console.log("AND " + " = " +"a is "+ _a+ " , "+"b is " + _b);
+    if(_a ===0 &&_b===0)
+    {
+        a=!!false;
+        console.log("AND is " + a );
+        return !a ;
+    }
+
+    if(_a ===0 &&_b===1)
+    {
+        a=!!false;
+        console.log("AND is " + a );
+        return !a;
+    }
+
+    if(_a ===1 &&_b===0)
+    {
+        a=!!false;
+        console.log("AND is " + a );
+        return !a;
+    }
+
+    if(_a ===1 &&_b===1)
+    {
+        a=!false;
+        b=!false
+        console.log("AND is " + a );
+        return !a;
+    }
+
+}
+
+
+function logicalGateOr(a=false,b=false)
+{
+    let _a = Math.floor(Math.random()*2);
+    let _b=Math.floor(Math.random()*2);
+
+    console.log("OR " + " = " +"a is "+ _a+ " , "+"b is " + _b);
+
+    if(_a ===0 &&_b===0)
+    {
+        a=!!false;
+        console.log("OR is " + a );
+        return !a + !b;
+    }
+
+    if(_a ===0 &&_b===1)
+    {
+        a=!false;
+        b=!false
+        console.log("OR is " + a );
+        return !a + !b;
+    }
+
+    if(_a ===1 &&_b===0)
+    {
+        a=!false;
+        b=!false
+        console.log("OR is " + a );
+        return !a + !b;
+    }
+
+    if(_a ===1 &&_b===1)
+    {
+        a=!false;
+        b=!false
+        console.log("OR is " + a );
+        return !a + !b;
+    }
+
+  
+}
+
+function logicalGateNand(a=false,b=false)
+{
+    let _a = Math.floor(Math.random()*2);
+    let _b=Math.floor(Math.random()*2);
+
+    console.log("NAND " + " = " +"a is "+ _a+ " , "+"b is " + _b);
+    if(_a ===0 &&_b===0)
+    {
+        a=!false;
+        b=!false;
+        console.log("OR is " + a );
+        return !a + !b;
+    }
+
+    if(_a ===0 &&_b===1)
+    {
+        a=!false;
+        b=!false
+        console.log("OR is " + a );
+        return !a + !b;
+    }
+
+    if(_a ===1 &&_b===0)
+    {
+        a=!false;
+        b=!false
+        console.log("OR is " + a );
+        return !a + !b;
+    }
+
+    if(_a ===1 &&_b===1)
+    {
+        a=!!false;
+        console.log("NAND is " + a );
+        return !a + !b;
     }
 }
 
-ComparingEqual(3,3);
 
-//  Answer to Question 2
-function CompairingAbsoluteNumber(number)
+function logicalGateNor(a=false,b=false)
 {
-    let _result;
-    if(number > 19)
+    let _a = Math.floor(Math.random()*2);
+    let _b=Math.floor(Math.random()*2);
+
+    console.log("NOR " + " = " +"a is "+ _a+ " , "+"b is " + _b);
+    if(_a ===0 && _b===0)
+    { 
+        a=!!true;
+        b=!!true;
+        console.log("NOR is " + a );
+        return !a;
+    }
+    else
     {
-        _result= number-19;
-        _result=_result*3;
-        console.log(_result);
-    }
-    else{
-        console.log("Less than 19");
-    }
-}
-CompairingAbsoluteNumber(112);
-
-
-
-//  Answer to Question 3
-function StartWithSpeceficLetters(input)
-{
-    let startWithLetter="Lo"
-    if(input.startsWith(startWithLetter))
-    {
-        console.log(input);
-    }
-    else{
-        input=startWithLetter+input;
-        console.log(input);
+        console.log("NOR is " + a );
+        return false;
     }
 }
 
-StartWithSpeceficLetters("asdAgency");
+function logicalGateXor(a=false,b=false)
+{
+    let _a = Math.floor(Math.random()*2);
+    let _b=Math.floor(Math.random()*2);
+    console.log("XOR " + " = " +"a is "+ _a+ " , "+"b is " + _b);
+  if(_a === 0 && _b===0 || _a ===1 && _b===1)
+  {
+    console.log("XOR is " + a );
+   a=!!true;
+   return !a;
+  }
+  else if(_a === 0 && _b===1 || _a ===1 && _b===0)
+  {
+      a=!false;
+    console.log("XOR is " + a );
+    return !a;
+  }
+
+}
+
+function logicalGateXnor(a=false,b=false)
+{
+    let _a = Math.floor(Math.random()*2);
+    let _b=Math.floor(Math.random()*2);
+    console.log("XNOR " + " = " +"a is "+ _a+ " , "+"b is " + _b);
+  if(_a === 0 && _b===1 || _a ===1 && _b===0)
+  {
+    console.log("XNOR is " + a );
+   a=!!true;
+   return !a;
+  }
+  else if(_a === 0 && _b===0 || _a ===1 && _b===1)
+  {
+      a=!false;
+    console.log("XNOR is " + a );
+    return !a;
+  }
+
+}
+
+
+logicalGateBuffer();
+console.log("\n");
+logicalGateNot();
+console.log("\n");
+logicalGateAnd();
+console.log("\n");
+logicalGateOr();
+console.log("\n");
+logicalGateNand();
+console.log("\n");
+logicalGateNor();
+console.log("\n");
+logicalGateXor();
+console.log("\n");
+logicalGateXnor();
