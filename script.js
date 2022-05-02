@@ -61,7 +61,7 @@ function customMap(myarr=[],callBack)
   const _getValue=[];
   for(let val of myarr)
   {
-    _getValue.push(callBack(val))
+    _getValue.push(callBack(val));
   }
 
   return _getValue;
@@ -71,7 +71,7 @@ const _output= customMap(initialRandomNumbers,(val)=>{
   return val*2;
 });
 
-console.log(`===Intial Random Numbers = ${initialRandomNumbers} \n===*2\n===Changed with customMap Function = ${_output  }\n\n \n`);
+console.log(`===Intial Random Numbers = ${initialRandomNumbers} \n===*2\n===Changed with customMap Function = ${_output  }\n\n\n`);
 
 
 
@@ -92,9 +92,24 @@ function customFilter(myarr=[],callBack)
 
 const even = customFilter(initialRandomNumbers,(val)=>{
   return val % 2 === 0;
-  return  
+
 });
 
-console.log(`===Intial Random Numbers = ${initialRandomNumbers} \n===Get Even Numbers \n===Even Numbers = ${even} `);
+console.log(`===Intial Random Numbers = ${initialRandomNumbers} \n===Get Even Numbers \n===Even Numbers = ${even} \n\n\n`);
 
 // ========REDUCE==========
+
+function customReduce(arr, callback)
+{
+    let initial = arr[0];
+
+    for (let i = 1; i < arr.length; i++)
+    {
+        initial = callback(initial, arr[i], i);
+    }
+    return initial;
+}
+
+console.log(customReduce([20,6,4], (acc, cv) => acc + cv));
+
+
